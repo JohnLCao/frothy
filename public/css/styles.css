@@ -1,8 +1,6 @@
-.link {
-  stroke: #222;
-  stroke-width: 10 !important; 
-/*  fill:;
-*/}
+/*.link {
+  stroke: #ccc;
+ }*/
 
 .node text {
 stroke:#333;
@@ -13,4 +11,8 @@ cursos:pointer;
 stroke:#fff;
 stroke-width:3px;
 fill:#555;
+}
+
+line {
+	background-color: black;
 }
