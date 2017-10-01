@@ -35,7 +35,7 @@ var setup = function(targetID){
 }
 
 var redrawChart = function(targetID, newdata, callback) {
-  console.log('redrawChart got called')
+  // console.log('redrawChart got called')
   //Import settings
   var margin=settings.margin, width=settings.width, height=settings.height, categoryIndent=settings.categoryIndent, 
   svg=settings.svg, x=settings.x, y=settings.y;
@@ -154,8 +154,6 @@ var redrawChart = function(targetID, newdata, callback) {
       .attr("transform", function(d){ return "translate(250," + y(d.key) + ")"; });
     index = 1;
   }
-
-  callback();
 };
 
 
@@ -165,7 +163,7 @@ var redrawChart = function(targetID, newdata, callback) {
 //Uses a callback because d3.json loading is asynchronous
 var pullData = function(settings,callback){
   d3.json("js/data.json", function (err, data){
-    console.log('pullData got called')
+    // console.log('pullData got called')
     if (err) return console.warn(err);
 
     var newData = data;
@@ -177,19 +175,8 @@ var pullData = function(settings,callback){
 
     newData = formatData(newData);
 
-    callback(settings,newData, color_update);
+    callback(settings,newData);
   })
-}
-
-var color_update = function(){
-  new_negs.forEach(function(val){
-    console.log($('[width="' + val + '"]'));
-    $('[width="' + val + '"]').css('fill', 'lightcoral');
-  });
-
-  new_poses.forEach(function(val){
-    $('[width="' + val + '"]').css('fill', '#00ff80');
-  });
 }
 
 //Sort data in descending order and take the top 10 values
@@ -202,18 +189,14 @@ var formatData = function(data){
 
 //I like to call it what it does
 var redraw = function(settings){
-  console.log("redraw got called");
+  // console.log("redraw got called");
   pullData(settings,redrawChart)
-  console.log('exiting redraw');
+  // console.log('exiting redraw');
 }
 
 //setup (includes first draw)
 var settings = setup('#operator');
 redraw(settings);
-new_negs.forEach(function(val){
-  var e = $('[width="' + val + '"]');
-  console.log(e);
-});
 
 //Repeat every 3 seconds
 setInterval(function(){
