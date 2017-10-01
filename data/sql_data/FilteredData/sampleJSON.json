@@ -32,11 +32,6 @@
 			"qualityName_id": 1
 		},
 		{
-			"Timestamp": "01-02-17",
-			"RGHR1": 59.034978484,
-			"RGHR2": 68.083030701
-		},
-		{
 			"Timestamp": "01-01-17",
 			"SAG1": 178.51496778,
 			"SAG2": 155.15563684,
@@ -56,15 +51,6 @@
 			"Z2RC 01 Run": "Stopped",
 			"Z2RC 02 Output": 82,
 			"Z2RC 02 Run": "Running"
-		},
-		{
-			"Timestamp": "01-02-17",
-			"Zn RGHR MIBC": 28,
-			"Continuous CuSO4": 56.555638888,
-			"Continuous SIBX": 8309.2872958,
-			"Staged SIBX Time A": 3,
-			"Staged SIBX Time B": 3.2999999523,
-			"Flot Feed MIBC": 32
 		}
 	],
 	"2": [
@@ -100,39 +86,25 @@
 			"qualityName_id": 1
 		},
 		{
-			"Timestamp": "01-02-17",
-			"RGHR1": 59.034978484,
-			"RGHR2": 68.083030701
-		},
-		{
 			"Timestamp": "01-01-17",
-			"SAG1": 178.51496778,
+			"SAG1": 128.51496778,
 			"SAG2": 155.15563684,
-			"SAG3": 118.50767439,
-			"Pb Rghr Tails Flow": 3758.995226,
-			"Zn Rougher 2 Con Flow": 983.59431435,
-			"Bank A Airflow": 1117.0152574,
-			"Bank B Airflow": 1049.8928814
+			"SAG3": 148.50767439,
+			"Pb Rghr Tails Flow": 3778.995226,
+			"Zn Rougher 2 Con Flow": 903.59431435,
+			"Bank A Airflow": 1157.0152574,
+			"Bank B Airflow": 1039.8928814
 		},
 		{
 			"Timestamp": "01-01-17",
-			"Z1RC 01 Output": 80,
+			"Z1RC 01 Output": 84,
 			"Z1RC 01 Run": "Running",
-			"Z1RC 02 Output": 86,
+			"Z1RC 02 Output": 82,
 			"Z1RC 02 Run": "Stopped",
-			"Z2RC 01 Output": 86,
+			"Z2RC 01 Output": 81,
 			"Z2RC 01 Run": "Stopped",
-			"Z2RC 02 Output": 82,
+			"Z2RC 02 Output": 89,
 			"Z2RC 02 Run": "Running"
-		},
-		{
-			"Timestamp": "01-02-17",
-			"Zn RGHR MIBC": 28,
-			"Continuous CuSO4": 56.555638888,
-			"Continuous SIBX": 8309.2872958,
-			"Staged SIBX Time A": 3,
-			"Staged SIBX Time B": 3.2999999523,
-			"Flot Feed MIBC": 32
 		}
 	]
 }

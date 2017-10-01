@@ -1,6 +1,7 @@
 var index = 0;
 var data_index = {
-  "1" : 1,
+  "0" : 1,
+  "1" : 1, 
   "2" : 1
 }
 var new_negs = [];
@@ -67,7 +68,7 @@ var redrawChart = function(settings, newdata) {
     .enter()
     .append("g")
     .attr("class", "chartRow")
-    .attr("transform", "translate(200," + height + margin.top + margin.bottom + ")");
+    .attr("transform", "translate(100," + height + margin.top + margin.bottom + ")");
 
   //Add rectangles
   newRow.insert("rect")
@@ -142,143 +143,197 @@ var redrawChart = function(settings, newdata) {
   //Fade out and remove exit elements
   chartRow.exit().transition()
     .style("opacity","0")
-    .attr("transform", "translate(250," + (height + margin.top + margin.bottom) + ")")
+    .attr("transform", "translate(100," + (height + margin.top + margin.bottom) + ")")
     .remove();
 
   ////////////////
   //REORDER ROWS//
   ////////////////
 
-  if(index < 2) {
+  if(index < 3) {
     var delay = function(d, i) { return 200 + i * 30; };
 
     chartRow.transition()
       .delay(delay)
       .duration(900)
-      .attr("transform", function(d){ return "translate(250," + y(d.key) + ")"; });
+      .attr("transform", function(d){ return "translate(100," + y(d.key) + ")"; });
     index++;
   }
 };
 
-
+var fakeAjax = function(iter, graph_num){
+  if (iter === 1){
+    switch(graph_num) {
+      case 0:
+            return {
+            "MF Pb": 5.2458934784,
+            "MF Zn": 13.497014999,
+            "MF Fe": 5.4422984123,
+            "PbFC Pb": 55.410709381,
+            "PbFC ZN": 11.606258392,
+            "PbFC Fe": 7.1280002594,
+            "ZRF Pb": 3.0963323116,
+            "ZRF Zn": 17.857028961,
+            "ZRF Fe": 8.1788711548,
+            "ZRT A Pb": 1.9203318357,
+            "ZRT A Zn": 0.9989464879,
+            "ZRT A Fe": 3.1686306,
+            "ZRT B Pb": 99.900001526,
+            "ZRT B Zn": 99.900001526,
+            "ZRT B Fe": 99.900001526,
+            "ZRT Comb Pb": 99.900001526,
+            "ZRT Comb Zn": 99.900001526,
+            "ZRT Comb Fe": 99.900001526,
+            "Z1RC Pb": 3.2828223705,
+            "Z1RC Zn": 38.465496063,
+            "Z1RC Fe": 5.6342253685,
+            "Z2RC Pb": 4.0510892868,
+            "Z2RC Zn": 23.221212387,
+            "Z2RC Fe": 14.158090591,
+            "ZRCC Pb": 2.8032693863,
+            "ZRCC Zn": 26.109272003,
+            "ZRCC Fe": 8.2968492508,
+            "value": 0.3892795,
+            "qualityName_id": 1
+            };
+            break;
+      case 1:
+          return {
+            "SAG1": 178.51496778/1.8,
+            "SAG2": 155.15563684/1.8,
+            "SAG3": 118.50767439/1.8,
+            "Pb Rghr Tails Flow": 3758.995226/40,
+            "Zn Rougher 2 Con Flow": 983.59431435/40,
+            "Bank A Airflow": 1117.0152574/40,
+            "Bank B Airflow": 1049.8928814/40
+          };
+          break;
+      case 2:
+          return{
+            "Z1RC 01 Output": 80,
+            "Z1RC 02 Output": 86,
+            "Z2RC 01 Output": 86,
+            "Z2RC 02 Output": 82
+          };
+          break;
+      default: 
+          return null;
+          break;
+      }
+  }
+  else if (iter===2) {
+    switch(graph_num) {
+      case 0:
+            return {
+              "MF Pb": 15.2458934784,
+              "MF Zn": 3.497014999,
+              "MF Fe": 67.4422984123,
+              "PbFCPb": 35.410709381,
+              "PbFC ZN": 51.606258392,
+              "PbFC Fe": 7.1280002594,
+              "ZRF Pb": 67.0963323116,
+              "ZRF Zn": 11.857028961,
+              "ZRF Fe": 85.1788711548,
+              "ZRT A Pb": 12.9203318357,
+              "ZRT A Zn": 7.9989464879,
+              "ZRT A Fe": 4.1686306,
+              "ZRT B Pb": 97.900001526,
+              "ZRT B Zn": 90.900001526,
+              "ZRT B Fe": 69.900001526,
+              "ZRT Comb Pb": 49.900001526,
+              "ZRT Comb Zn": 69.900001526,
+              "ZRT Comb Fe": 99.900001526,
+              "Z1RC Pb": 4.2828223705,
+              "Z1RC Zn": 33.465496063,
+              "Z1RC Fe": 6.6342253685,
+              "Z2RC Pb": 89.0510892868,
+              "Z2RC Zn": 2.221212387,
+              "Z2RC Fe": 74.158090591,
+              "ZRCC Pb": 1.8032693863,
+              "ZRCC Zn": 46.109272003,
+              "ZRCC Fe": 78.2968492508,
+              "value": 0.3892795,
+              "qualityName_id": 1
+            };
+            break;
+      case 1:
+          return {
+            "SAG1": 78.51496778/1.8,
+            "SAG2": 135.15563684/1.8,
+            "SAG3": 18.50767439/1.8,
+            "Pb Rghr Tails Flow": 3798.995226/40,
+            "Zn Rougher 2 Con Flow": 913.59431435/40,
+            "Bank A Airflow": 1017.0152574/40,
+            "Bank B Airflow": 1549.8928814/40
+          };
+          break;
+      case 2:
+          return{
+            "Z1RC 01 Output": 50,
+            "Z1RC 02 Output": 76,
+            "Z2RC 01 Output": 36,
+            "Z2RC 02 Output": 92
+          }
+          break;
+      default: 
+          return null;
+          break;
+      }
+  }
+}
 
 //Pulls data
 //Since our data is fake, adds some random changes to simulate a data stream.
 //Uses a callback because d3.json loading is asynchronous
 var pullData = function(settings,callback, graph_num){
-  d3.json("js/data.json", function (err, data){
+  // d3.json("js/data.json", function (err, data){
     // console.log('pullData got called')
-    if (err) return console.warn(err);
-
-    console.log(data_index);
-    var newData = data[data_index[graph_num]];
+    // if (err) return console.warn(err);
+    // console.log(data_index);
+    var newData = fakeAjax(data_index[graph_num], graph_num);
     if (data_index[graph_num] === 1){
-      data_index[graph_num] = 2;
+      data_index[graph_num] = 2;  
     }else {
       data_index[graph_num] = 1;
     }
-    // data.forEach(function(d,i){
-    //   var sign = Math.random() > .5 ? -1 : 1;
-    //   var newValue = d.value + Math.floor((Math.random()*100)*sign);
-    //   newData[i].value = newValue
-    // })
-
-    newData = formatData(newData, data_index[graph_num]);
-
+    
+    newData = formatData(newData);
     callback(settings,newData);
-  })
+  // })
 }
 
 //Sort data in descending order and take the top 10 values
-var formatData = function(data, iteration){
+var formatData = function(data){
     // return data.sort(function (a, b) {
     //     return b.value - a.value;
     //   })
-    // .slice(0, 10
-    if (iteration === 1){
-      return [
-              {"key":"MF Pb", "value": 5.2458934784},
-              {"key":"MF Zn", "value": 13.497014999},
-              {"key":"MF Fe", "value": 5.4422984123},
-              {"key":"PbFC Pb","value": 55.410709381},
-              {"key":"PbFC ZN","value": 11.606258392},
-              {"key":"PbFC Fe","value": 7.1280002594},
-              {"key":"ZRF Pb","value": 3.0963323116},
-              {"key":"ZRF Zn","value": 17.857028961},
-              {"key":"ZRF Fe","value": 8.1788711548},
-              {"key":"ZRT A Pb","value": 1.9203318357},
-              {"key":"ZRT A Zn","value": 0.9989464879},
-              {"key":"ZRT A Fe","value": 3.1686306},
-              {"key":"ZRT B Pb","value": 99.900001526},
-              {"key":"ZRT B Zn","value": 99.900001526},
-              {"key":"ZRT B Fe","value": 99.900001526},
-              {"key":"ZRT Comb Pb","value": 99.900001526},
-              {"key":"ZRT Comb Zn","value": 99.900001526},
-              {"key":"ZRT Comb Fe","value": 99.900001526},
-              {"key":"Z1RC Pb","value": 3.2828223705},
-              {"key":"Z1RC Zn","value": 38.465496063},
-              {"key":"Z1RC Fe","value": 5.6342253685},
-              {"key":"Z2RC Pb","value": 4.0510892868},
-              {"key":"Z2RC Zn","value": 23.221212387},
-              {"key":"Z2RC Fe","value": 14.158090591},
-              {"key":"ZRCC Pb","value": 2.8032693863},
-              {"key":"ZRCC Zn","value": 26.109272003},
-              {"key":"ZRCC Fe","value": 8.2968492508},
-              {"key":"value","value": 0.3892795},
-              {"key":"qualityName_id","value": 1}
-        ]
+    // .slice(0, 10)
+    var processedData = [];
+    for (var prop in data){
+      processedData.push({
+        "key": prop,
+        "value": data[prop]
+      })
     }
-    else if (iteration === 2){
-      return [
-                {"key":"MF Pb", "value": 12.2458934784},
-                {"key":"MF Zn", "value": 5.497014999},
-                {"key":"MF Fe", "value": 55.4422984123},
-                {"key":"PbFCPb", "value": 3.410709381},
-                {"key":"PbFC ZN", "value": 7.606258392},
-                {"key":"PbFC Fe", "value": 11.1280002594},
-                {"key":"ZRF Pb", "value": 7.0963323116},
-                {"key":"ZRF Zn", "value": 12.857028961},
-                {"key":"ZRF Fe", "value": 10.1788711548},
-                {"key":"ZRT A Pb", "value": 3.9203318357},
-                {"key":"ZRT A Zn", "value": 1.9989464879},
-                {"key":"ZRT A Fe", "value": 4.1686306},
-                {"key":"ZRT B Pb", "value": 93.900001526},
-                {"key":"ZRT B Zn", "value": 96.900001526},
-                {"key":"ZRT B Fe", "value": 77.900001526},
-                {"key":"ZRT Comb Pb", "value": 33.900001526},
-                {"key":"ZRT Comb Zn", "value": 33.900001526},
-                {"key":"ZRT Comb Fe", "value": 78.900001526},
-                {"key":"Z1RC Pb", "value": 83.2828223705},
-                {"key":"Z1RC Zn", "value": 35.465496063},
-                {"key":"Z1RC Fe", "value": 1.6342253685},
-                {"key":"Z2RC Pb", "value": 6.0510892868},
-                {"key":"Z2RC Zn", "value": 73.221212387},
-                {"key":"Z2RC Fe", "value": 14.158090591},
-                {"key":"ZRCC Pb", "value": 34.8032693863},
-                {"key":"ZRCC Zn", "value": 6.109272003},
-                {"key":"ZRCC Fe", "value": 2.2968492508},
-                {"key":"value", "value": 10.3892795},
-                {"key":"qualityName_id", "value": 0}
-      ]
-    }
-  
+    return processedData;
 }
 
 //I like to call it what it does
 var redraw = function(settings, graph_num){
-  // console.log("redraw got called");
-  pullData(settings,redrawChart, graph_num)
-  // console.log('exiting redraw');
+  pullData(settings, redrawChart, graph_num)
 }
 
 //setup (includes first draw)
 var settings0 = setup('#operator0');
 var settings1 = setup('#operator1');
-redraw(settings0, 1);
-redraw(settings1, 2);
+var settings2 = setup('#operator2')
+redraw(settings0, 0);
+redraw(settings1, 1);
+redraw(settings2, 2);
 
 //Repeat every 3 seconds
 setInterval(function(){
-  redraw(settings0, 1);
-  redraw(settings1, 2);
-}, 2000);
+  redraw(settings0, 0);
+  redraw(settings1, 1);
+  redraw(settings2, 2);
+}, 1000);
