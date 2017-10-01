@@ -102,25 +102,33 @@ g.append("svg:g")
 .attr("transform", "rotate(-90)")
 .text("Recovery");
 
-var assays = [];
+// ver fileInput = document.getElementByld("csv"),
+// readFile = function () {
+//   var reader = new FileReader();
+//   reader.onload = function () {
+//     document.getElementByld('out').innerHTML = reader.result;
+//   };
+//   reader.readAsBinaryString(fileInput.files[0]);
+// };
+
+// fileInput.addEventListener('chage', readFile);
+// var assays = []
 
 // $(document).ready(function() {
-//   $.get('data.csv', function(data){ 
+//   $.get('Assays.csv', function(data){ 
     
 //     var lines = data.split('\n');
+
 //     var properties = ["Timestamp", "MF_Pb", "MF_Zn"]
-    
-//     for (var i = 0; i < lines.length; i++){
+
+//     for (var i = 0; i < lines.length; i++) {
 //       var assay = lines[i].split(',');
 //       var tmp = {}
-//       for (var j = 0; j < assay.length; j++){
-//          tmp[properties[j]] = assay[j]
+//       for (var j = 0; j < assay.length; j++) {
+//         tmp[properties[j]] = assay[j]
 //       }
 //       assays.push(tmp);
 //     }
-    
 //   });
-//   console.log.(assays);
-//   console.log(assays[0]);
-//   console.log(assays[0], ["Timestamp"]);
+//   console.log(assays[1]);
 // });
