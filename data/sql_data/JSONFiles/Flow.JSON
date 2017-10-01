@@ -1,0 +1,992 @@
+[
+  {
+    "SAG1": 258.43375494,
+    "SAG2": 183.65795762,
+    "SAG3": 230.82294043,
+    "Pb Rghr Tails Flow": 3482.4363469,
+    "Zn Rougher 2 Con Flow": 897.05028395,
+    "Bank A Airflow": 941.29030355,
+    "Bank B Airflow": 946.07124051,
+    "value": 3.575363
+  },
+  {
+    "SAG1": 260.07733073,
+    "SAG2": 183.05302106,
+    "SAG3": 231.50833518,
+    "Pb Rghr Tails Flow": 3490.9838871,
+    "Zn Rougher 2 Con Flow": 923.72968906,
+    "Bank A Airflow": 942.05602938,
+    "Bank B Airflow": 945.25029921,
+    "value": 1.069023
+  },
+  {
+    "SAG1": 256.38237621,
+    "SAG2": 186.4061062,
+    "SAG3": 230.53592518,
+    "Pb Rghr Tails Flow": 3528.9389768,
+    "Zn Rougher 2 Con Flow": 932.65005449,
+    "Bank A Airflow": 942.40623536,
+    "Bank B Airflow": 942.03830016,
+    "value": 2.051966
+  },
+  {
+    "SAG1": 255.11231374,
+    "SAG2": 181.43649985,
+    "SAG3": 217.86892013,
+    "Pb Rghr Tails Flow": 3505.179879,
+    "Zn Rougher 2 Con Flow": 934.47711167,
+    "Bank A Airflow": 943.17871408,
+    "Bank B Airflow": 945.44568616,
+    "value": 1.9136400000000002
+  },
+  {
+    "SAG1": 258.35165405,
+    "SAG2": 179.77737854,
+    "SAG3": 232.78783336,
+    "Pb Rghr Tails Flow": 3501.9614652,
+    "Zn Rougher 2 Con Flow": 944.81957709,
+    "Bank A Airflow": 945.58910606,
+    "Bank B Airflow": 946.02257907,
+    "value": 1.005923
+  },
+  {
+    "SAG1": 261.00838462,
+    "SAG2": 183.34939286,
+    "SAG3": 231.78836168,
+    "Pb Rghr Tails Flow": 3500.7790713,
+    "Zn Rougher 2 Con Flow": 940.57779464,
+    "Bank A Airflow": 944.40777511,
+    "Bank B Airflow": 946.69015514,
+    "value": 0.7419737
+  },
+  {
+    "SAG1": 261.55684178,
+    "SAG2": 176.57690971,
+    "SAG3": 230.17762126,
+    "Pb Rghr Tails Flow": 3510.8033602,
+    "Zn Rougher 2 Con Flow": 943.7776081,
+    "Bank A Airflow": 943.39440855,
+    "Bank B Airflow": 947.06501563,
+    "value": 1.970175
+  },
+  {
+    "SAG1": 260.87721929,
+    "SAG2": 184.51894728,
+    "SAG3": 229.07086952,
+    "Pb Rghr Tails Flow": 3501.1853325,
+    "Zn Rougher 2 Con Flow": 985.79797488,
+    "Bank A Airflow": 943.16818509,
+    "Bank B Airflow": 949.00842918,
+    "value": 0.7328765
+  },
+  {
+    "SAG1": 266.48352051,
+    "SAG2": 181.08913334,
+    "SAG3": 232.21997092,
+    "Pb Rghr Tails Flow": 3475.6796955,
+    "Zn Rougher 2 Con Flow": 934.8573333,
+    "Bank A Airflow": 944.25866397,
+    "Bank B Airflow": 949.53238314,
+    "value": 0.8711402
+  },
+  {
+    "SAG1": 260.91254548,
+    "SAG2": 176.43715725,
+    "SAG3": 235.13215948,
+    "Pb Rghr Tails Flow": 3503.1312047,
+    "Zn Rougher 2 Con Flow": 917.45257399,
+    "Bank A Airflow": 942.85773106,
+    "Bank B Airflow": 949.31453734,
+    "value": 0.5631378
+  },
+  {
+    "SAG1": 252.55948154,
+    "SAG2": 174.08545562,
+    "SAG3": 223.30142435,
+    "Pb Rghr Tails Flow": 3462.2897293,
+    "Zn Rougher 2 Con Flow": 939.83379234,
+    "Bank A Airflow": 943.53602805,
+    "Bank B Airflow": 944.90691492,
+    "value": 2.467841
+  },
+  {
+    "SAG1": 237.09184207,
+    "SAG2": 162.6668166,
+    "SAG3": 222.45778202,
+    "Pb Rghr Tails Flow": 3490.4899962,
+    "Zn Rougher 2 Con Flow": 956.86040056,
+    "Bank A Airflow": 942.93215384,
+    "Bank B Airflow": 943.56186546,
+    "value": 0.7803578
+  },
+  {
+    "SAG1": 260.43842169,
+    "SAG2": 150.6913218,
+    "SAG3": 214.6192177,
+    "Pb Rghr Tails Flow": 3457.7565022,
+    "Zn Rougher 2 Con Flow": 867.11458413,
+    "Bank A Airflow": 941.45932519,
+    "Bank B Airflow": 943.66285314,
+    "value": 0.7054249
+  },
+  {
+    "SAG1": 259.04968195,
+    "SAG2": 167.57461242,
+    "SAG3": 209.95711162,
+    "Pb Rghr Tails Flow": 3454.6663387,
+    "Zn Rougher 2 Con Flow": 991.64949011,
+    "Bank A Airflow": 943.81977484,
+    "Bank B Airflow": 945.25609608,
+    "value": 0.6378191
+  },
+  {
+    "SAG1": 254.60958663,
+    "SAG2": 185.74573263,
+    "SAG3": 227.53006723,
+    "Pb Rghr Tails Flow": 3518.0191753,
+    "Zn Rougher 2 Con Flow": 883.05046986,
+    "Bank A Airflow": 948.34848037,
+    "Bank B Airflow": 947.37588982,
+    "value": 1.160717
+  },
+  {
+    "SAG1": 266.39197715,
+    "SAG2": 182.28491861,
+    "SAG3": 228.7104122,
+    "Pb Rghr Tails Flow": 3548.0775527,
+    "Zn Rougher 2 Con Flow": 844.24346822,
+    "Bank A Airflow": 938.67457918,
+    "Bank B Airflow": 937.19620234,
+    "value": 0.7296954000000001
+  },
+  {
+    "SAG1": 250.08227408,
+    "SAG2": 182.52748108,
+    "SAG3": 240.77435794,
+    "Pb Rghr Tails Flow": 3520.6894111,
+    "Zn Rougher 2 Con Flow": 837.54840302,
+    "Bank A Airflow": 940.37508392,
+    "Bank B Airflow": 939.64023599,
+    "value": 0.8026667
+  },
+  {
+    "SAG1": 269.08117368,
+    "SAG2": 181.79761127,
+    "SAG3": 238.30711569,
+    "Pb Rghr Tails Flow": 3534.0757714,
+    "Zn Rougher 2 Con Flow": 865.47653052,
+    "Bank A Airflow": 936.49654337,
+    "Bank B Airflow": 939.22022429,
+    "value": 0.5795
+  },
+  {
+    "SAG1": 265.68835139,
+    "SAG2": 182.88066233,
+    "SAG3": 15.7174147,
+    "Pb Rghr Tails Flow": 3488.1385026,
+    "Zn Rougher 2 Con Flow": 844.32925638,
+    "Bank A Airflow": 938.93869887,
+    "Bank B Airflow": 940.97022778,
+    "value": 1.000237
+  },
+  {
+    "SAG1": 268.98582483,
+    "SAG2": 186.36238124,
+    "SAG3": 13.406593323,
+    "Pb Rghr Tails Flow": 3488.0314752,
+    "Zn Rougher 2 Con Flow": 852.87721105,
+    "Bank A Airflow": 943.12948573,
+    "Bank B Airflow": 941.14774849,
+    "value": 0.6383295
+  },
+  {
+    "SAG1": 266.18862169,
+    "SAG2": 186.9946131,
+    "SAG3": 13.406593323,
+    "Pb Rghr Tails Flow": 3487.0507703,
+    "Zn Rougher 2 Con Flow": 870.02051574,
+    "Bank A Airflow": 940.3732362,
+    "Bank B Airflow": 940.38630133,
+    "value": 1.254742
+  },
+  {
+    "SAG1": 258.02129964,
+    "SAG2": 180.95238433,
+    "SAG3": 21.837924047,
+    "Pb Rghr Tails Flow": 3544.8071676,
+    "Zn Rougher 2 Con Flow": 868.88406543,
+    "Bank A Airflow": 937.30012698,
+    "Bank B Airflow": 939.07742452,
+    "value": 0.6915073
+  },
+  {
+    "SAG1": 260.05851819,
+    "SAG2": 179.41425564,
+    "SAG3": 15.224000587,
+    "Pb Rghr Tails Flow": 3527.7997104,
+    "Zn Rougher 2 Con Flow": 867.6578653,
+    "Bank A Airflow": 940.18944025,
+    "Bank B Airflow": 938.00237307,
+    "value": 1.181352
+  },
+  {
+    "SAG1": 253.24400293,
+    "SAG2": 187.45724818,
+    "SAG3": 28.389473767,
+    "Pb Rghr Tails Flow": 3301.9204784,
+    "Zn Rougher 2 Con Flow": 850.47463797,
+    "Bank A Airflow": 954.49363837,
+    "Bank B Airflow": 956.78340079,
+    "value": 0.53975
+  },
+  {
+    "SAG1": 246.4799943,
+    "SAG2": 182.32760205,
+    "SAG3": 212.44026201,
+    "Pb Rghr Tails Flow": 3379.8566267,
+    "Zn Rougher 2 Con Flow": 858.07721916,
+    "Bank A Airflow": 938.43043516,
+    "Bank B Airflow": 940.56156038,
+    "value": 0.577654
+  },
+  {
+    "SAG1": 251.95315509,
+    "SAG2": 182.19446878,
+    "SAG3": 223.22395844,
+    "Pb Rghr Tails Flow": 3361.3231321,
+    "Zn Rougher 2 Con Flow": 852.86891887,
+    "Bank A Airflow": 937.53315461,
+    "Bank B Airflow": 940.06419933,
+    "value": 1.250422
+  },
+  {
+    "SAG1": 250.36437475,
+    "SAG2": 178.10748034,
+    "SAG3": 230.04758735,
+    "Pb Rghr Tails Flow": 3410.9083565,
+    "Zn Rougher 2 Con Flow": 859.22522944,
+    "Bank A Airflow": 939.09647143,
+    "Bank B Airflow": 939.07488211,
+    "value": 2.352719
+  },
+  {
+    "SAG1": 262.14797673,
+    "SAG2": 182.52300206,
+    "SAG3": 220.76390024,
+    "Pb Rghr Tails Flow": 3441.4834217,
+    "Zn Rougher 2 Con Flow": 841.79332906,
+    "Bank A Airflow": 940.41832529,
+    "Bank B Airflow": 939.54380085,
+    "value": 0.851932
+  },
+  {
+    "SAG1": 258.96813233,
+    "SAG2": 182.11077638,
+    "SAG3": 229.47763468,
+    "Pb Rghr Tails Flow": 3516.9231111,
+    "Zn Rougher 2 Con Flow": 829.62485202,
+    "Bank A Airflow": 942.00121973,
+    "Bank B Airflow": 943.75116185,
+    "value": 1.159833
+  },
+  {
+    "SAG1": 263.02552253,
+    "SAG2": 175.88081571,
+    "SAG3": 231.61708034,
+    "Pb Rghr Tails Flow": 3552.9682609,
+    "Zn Rougher 2 Con Flow": 828.73244697,
+    "Bank A Airflow": 939.13515769,
+    "Bank B Airflow": 940.47684864,
+    "value": 1.022613
+  },
+  {
+    "SAG1": 259.58482135,
+    "SAG2": 182.78256805,
+    "SAG3": 233.79688589,
+    "Pb Rghr Tails Flow": 3497.5365469,
+    "Zn Rougher 2 Con Flow": 838.03197304,
+    "Bank A Airflow": 942.26813708,
+    "Bank B Airflow": 944.21593705,
+    "value": 0.7323805
+  },
+  {
+    "SAG1": 256.8132019,
+    "SAG2": 174.32378098,
+    "SAG3": 237.03643751,
+    "Pb Rghr Tails Flow": 3453.8529241,
+    "Zn Rougher 2 Con Flow": 836.69163333,
+    "Bank A Airflow": 941.93295623,
+    "Bank B Airflow": 945.01727941,
+    "value": 0.5085554
+  },
+  {
+    "SAG1": 257.21650918,
+    "SAG2": 177.44610813,
+    "SAG3": 242.26434671,
+    "Pb Rghr Tails Flow": 3453.6060716,
+    "Zn Rougher 2 Con Flow": 819.40498638,
+    "Bank A Airflow": 940.75703574,
+    "Bank B Airflow": 943.06752122,
+    "value": 0.7237838000000001
+  },
+  {
+    "SAG1": 256.64505427,
+    "SAG2": 178.01196262,
+    "SAG3": 237.2195334,
+    "Pb Rghr Tails Flow": 3429.7889674,
+    "Zn Rougher 2 Con Flow": 856.77442016,
+    "Bank A Airflow": 943.47165265,
+    "Bank B Airflow": 945.23342855,
+    "value": 1.395405
+  },
+  {
+    "SAG1": 250.9937755,
+    "SAG2": 174.64314126,
+    "SAG3": 238.55078188,
+    "Pb Rghr Tails Flow": 3440.6788919,
+    "Zn Rougher 2 Con Flow": 850.68423717,
+    "Bank A Airflow": 943.66870502,
+    "Bank B Airflow": 945.83852186,
+    "value": 0.8232376
+  },
+  {
+    "SAG1": 264.60459419,
+    "SAG2": 174.75369512,
+    "SAG3": 237.62872527,
+    "Pb Rghr Tails Flow": 3456.0776878,
+    "Zn Rougher 2 Con Flow": 866.43859044,
+    "Bank A Airflow": 940.74192651,
+    "Bank B Airflow": 944.11120175,
+    "value": 1.0427520000000001
+  },
+  {
+    "SAG1": 244.40698541,
+    "SAG2": 172.20073707,
+    "SAG3": 226.75055298,
+    "Pb Rghr Tails Flow": 3461.2279338,
+    "Zn Rougher 2 Con Flow": 893.63183999,
+    "Bank A Airflow": 940.82295143,
+    "Bank B Airflow": 945.20351016,
+    "value": 1.695715
+  },
+  {
+    "SAG1": 256.22116814,
+    "SAG2": 174.16542641,
+    "SAG3": 234.24711278,
+    "Pb Rghr Tails Flow": 3507.674441,
+    "Zn Rougher 2 Con Flow": 945.24950067,
+    "Bank A Airflow": 942.53107956,
+    "Bank B Airflow": 941.91600936,
+    "value": 0.7975140000000001
+  },
+  {
+    "SAG1": 248.22385875,
+    "SAG2": 182.71459336,
+    "SAG3": 246.45075626,
+    "Pb Rghr Tails Flow": 3488.7265875,
+    "Zn Rougher 2 Con Flow": 943.36921192,
+    "Bank A Airflow": 940.2472952,
+    "Bank B Airflow": 941.208301,
+    "value": 0.7164307
+  },
+  {
+    "SAG1": 251.02922192,
+    "SAG2": 180.54945374,
+    "SAG3": 242.80844346,
+    "Pb Rghr Tails Flow": 3485.8258409,
+    "Zn Rougher 2 Con Flow": 983.3040655,
+    "Bank A Airflow": 941.20486052,
+    "Bank B Airflow": 943.45630796,
+    "value": 2.218287
+  },
+  {
+    "SAG1": 244.19574143,
+    "SAG2": 179.00530215,
+    "SAG3": 243.7894395,
+    "Pb Rghr Tails Flow": 3528.861806,
+    "Zn Rougher 2 Con Flow": 1009.9645227,
+    "Bank A Airflow": 939.93843953,
+    "Bank B Airflow": 943.25958431,
+    "value": 0.8636376
+  },
+  {
+    "SAG1": 251.05365195,
+    "SAG2": 178.60463923,
+    "SAG3": 237.07407722,
+    "Pb Rghr Tails Flow": 3527.2484592,
+    "Zn Rougher 2 Con Flow": 963.69962282,
+    "Bank A Airflow": 941.11050815,
+    "Bank B Airflow": 941.29074457,
+    "value": 1.6563900000000003
+  },
+  {
+    "SAG1": 234.82594463,
+    "SAG2": 185.17046161,
+    "SAG3": 237.88775391,
+    "Pb Rghr Tails Flow": 3531.1319238,
+    "Zn Rougher 2 Con Flow": 971.70614396,
+    "Bank A Airflow": 943.4628787,
+    "Bank B Airflow": 943.10036848,
+    "value": 0.5861544
+  },
+  {
+    "SAG1": 239.32935211,
+    "SAG2": 179.57671471,
+    "SAG3": 237.64916012,
+    "Pb Rghr Tails Flow": 3525.2082022,
+    "Zn Rougher 2 Con Flow": 944.12849897,
+    "Bank A Airflow": 943.08801416,
+    "Bank B Airflow": 946.90928381,
+    "value": 0.8738652
+  },
+  {
+    "SAG1": 246.37203957,
+    "SAG2": 183.32301379,
+    "SAG3": 243.79858777,
+    "Pb Rghr Tails Flow": 3514.0914609,
+    "Zn Rougher 2 Con Flow": 902.48455354,
+    "Bank A Airflow": 943.21774445,
+    "Bank B Airflow": 945.26569306,
+    "value": 3.3077400000000003
+  },
+  {
+    "SAG1": 234.93531957,
+    "SAG2": 181.8192331,
+    "SAG3": 52.930291893,
+    "Pb Rghr Tails Flow": 3487.2707619,
+    "Zn Rougher 2 Con Flow": 865.66429253,
+    "Bank A Airflow": 945.53031944,
+    "Bank B Airflow": 947.6076239,
+    "value": 0.6595300999999999
+  },
+  {
+    "SAG1": 241.15214971,
+    "SAG2": 178.54249147,
+    "SAG3": 218.55889148,
+    "Pb Rghr Tails Flow": 3460.2292638,
+    "Zn Rougher 2 Con Flow": 847.26472321,
+    "Bank A Airflow": 945.00164861,
+    "Bank B Airflow": 946.59118663,
+    "value": 1.264233
+  },
+  {
+    "SAG1": 234.42302963,
+    "SAG2": 184.25997282,
+    "SAG3": 235.06517,
+    "Pb Rghr Tails Flow": 3464.7831232,
+    "Zn Rougher 2 Con Flow": 845.40434872,
+    "Bank A Airflow": 944.32053299,
+    "Bank B Airflow": 948.24034307,
+    "value": 0.7903916999999999
+  },
+  {
+    "SAG1": 237.25812496,
+    "SAG2": 180.68363521,
+    "SAG3": 233.43763239,
+    "Pb Rghr Tails Flow": 3464.5337943,
+    "Zn Rougher 2 Con Flow": 873.93830072,
+    "Bank A Airflow": 943.9814806,
+    "Bank B Airflow": 948.05935325,
+    "value": 4.309361
+  },
+  {
+    "SAG1": 249.45054626,
+    "SAG2": 176.60839801,
+    "SAG3": 234.83854248,
+    "Pb Rghr Tails Flow": 3425.8932592,
+    "Zn Rougher 2 Con Flow": 842.67124074,
+    "Bank A Airflow": 947.58264091,
+    "Bank B Airflow": 949.41266776,
+    "value": 1.065089
+  },
+  {
+    "SAG1": 238.87525835,
+    "SAG2": 173.97637109,
+    "SAG3": 229.4610937,
+    "Pb Rghr Tails Flow": 3419.6840016,
+    "Zn Rougher 2 Con Flow": 846.62900722,
+    "Bank A Airflow": 947.58270972,
+    "Bank B Airflow": 950.37519565,
+    "value": 0.8817105
+  },
+  {
+    "SAG1": 231.0279418,
+    "SAG2": 186.30989779,
+    "SAG3": 41.173206623,
+    "Pb Rghr Tails Flow": 3430.5067521,
+    "Zn Rougher 2 Con Flow": 820.56618263,
+    "Bank A Airflow": 941.39468288,
+    "Bank B Airflow": 948.42762733,
+    "value": 1.166858
+  },
+  {
+    "SAG1": 242.48235774,
+    "SAG2": 177.40338644,
+    "SAG3": 13.846154213,
+    "Pb Rghr Tails Flow": 3460.9586099,
+    "Zn Rougher 2 Con Flow": 836.78547507,
+    "Bank A Airflow": 950.01427728,
+    "Bank B Airflow": 950.91579086,
+    "value": 1.552815
+  },
+  {
+    "SAG1": 241.71016167,
+    "SAG2": 174.77833091,
+    "SAG3": 40.765431575,
+    "Pb Rghr Tails Flow": 3487.6525278,
+    "Zn Rougher 2 Con Flow": 853.67488293,
+    "Bank A Airflow": 950.49160472,
+    "Bank B Airflow": 952.02369353,
+    "value": 1.166
+  },
+  {
+    "SAG1": 253.37172478,
+    "SAG2": 179.14540652,
+    "SAG3": 237.94844627,
+    "Pb Rghr Tails Flow": 3455.7920133,
+    "Zn Rougher 2 Con Flow": 805.60562798,
+    "Bank A Airflow": 951.02566225,
+    "Bank B Airflow": 955.12677641,
+    "value": 0.6736211999999999
+  },
+  {
+    "SAG1": 258.50746801,
+    "SAG2": 178.84279185,
+    "SAG3": 234.01410479,
+    "Pb Rghr Tails Flow": 3463.026358,
+    "Zn Rougher 2 Con Flow": 811.64609607,
+    "Bank A Airflow": 951.23023893,
+    "Bank B Airflow": 955.97365005,
+    "value": 0.6779187
+  },
+  {
+    "SAG1": 260.63357087,
+    "SAG2": 178.13186646,
+    "SAG3": 38.671120857,
+    "Pb Rghr Tails Flow": 3443.9508809,
+    "Zn Rougher 2 Con Flow": 839.52872519,
+    "Bank A Airflow": 950.56052053,
+    "Bank B Airflow": 956.26744335,
+    "value": 1.0997299999999999
+  },
+  {
+    "SAG1": 258.79119873,
+    "SAG2": 176.6444847,
+    "SAG3": 13.516483307,
+    "Pb Rghr Tails Flow": 3426.9924668,
+    "Zn Rougher 2 Con Flow": 865.10816287,
+    "Bank A Airflow": 951.77426501,
+    "Bank B Airflow": 960.11836811,
+    "value": 1.290866
+  },
+  {
+    "SAG1": 256.18679672,
+    "SAG2": 178.16443546,
+    "SAG3": 13.516483307,
+    "Pb Rghr Tails Flow": 3423.0491656,
+    "Zn Rougher 2 Con Flow": 902.77422652,
+    "Bank A Airflow": 954.60214119,
+    "Bank B Airflow": 959.69177717,
+    "value": 0.8825607
+  },
+  {
+    "SAG1": 251.00345871,
+    "SAG2": 152.83687421,
+    "SAG3": 14.945055008,
+    "Pb Rghr Tails Flow": 3349.5732554,
+    "Zn Rougher 2 Con Flow": 912.47956078,
+    "Bank A Airflow": 957.49144178,
+    "Bank B Airflow": 960.78020145,
+    "value": 1.01829
+  },
+  {
+    "SAG1": 252.32293795,
+    "SAG2": 152.10722004,
+    "SAG3": 14.945055008,
+    "Pb Rghr Tails Flow": 3309.6209322,
+    "Zn Rougher 2 Con Flow": 956.53058309,
+    "Bank A Airflow": 958.14870108,
+    "Bank B Airflow": 963.30640995,
+    "value": 0.5738003
+  },
+  {
+    "SAG1": 248.97905014,
+    "SAG2": 148.73293144,
+    "SAG3": 14.945055008,
+    "Pb Rghr Tails Flow": 3254.0700751,
+    "Zn Rougher 2 Con Flow": 995.75198539,
+    "Bank A Airflow": 957.86427372,
+    "Bank B Airflow": 964.89795109,
+    "value": 1.210904
+  },
+  {
+    "SAG1": 246.6621321,
+    "SAG2": 146.28852438,
+    "SAG3": 14.945055008,
+    "Pb Rghr Tails Flow": 3242.3559387,
+    "Zn Rougher 2 Con Flow": 984.79631387,
+    "Bank A Airflow": 956.08689536,
+    "Bank B Airflow": 961.47234514,
+    "value": 0.9812052
+  },
+  {
+    "SAG1": 258.9020422,
+    "SAG2": 142.96459662,
+    "SAG3": 14.945055008,
+    "Pb Rghr Tails Flow": 3176.4114524,
+    "Zn Rougher 2 Con Flow": 994.76993498,
+    "Bank A Airflow": 956.58316518,
+    "Bank B Airflow": 959.80508049,
+    "value": 2.939995
+  },
+  {
+    "SAG1": 245.49398647,
+    "SAG2": 147.51030728,
+    "SAG3": 158.99940034,
+    "Pb Rghr Tails Flow": 3266.7924147,
+    "Zn Rougher 2 Con Flow": 964.70229934,
+    "Bank A Airflow": 953.94482332,
+    "Bank B Airflow": 965.0777918,
+    "value": 0.5926465999999999
+  },
+  {
+    "SAG1": 244.1416076,
+    "SAG2": 146.96161598,
+    "SAG3": 39.585825538,
+    "Pb Rghr Tails Flow": 3271.2691521,
+    "Zn Rougher 2 Con Flow": 976.51677437,
+    "Bank A Airflow": 954.92007349,
+    "Bank B Airflow": 961.17406489,
+    "value": 1.531195
+  },
+  {
+    "SAG1": 244.72528076,
+    "SAG2": 146.18401074,
+    "SAG3": 233.33079591,
+    "Pb Rghr Tails Flow": 3333.3293077,
+    "Zn Rougher 2 Con Flow": 893.67909465,
+    "Bank A Airflow": 952.20740045,
+    "Bank B Airflow": 960.2014976,
+    "value": 0.6022626
+  },
+  {
+    "SAG1": 253.15618151,
+    "SAG2": 146.30366857,
+    "SAG3": 229.67882801,
+    "Pb Rghr Tails Flow": 3346.6059652,
+    "Zn Rougher 2 Con Flow": 917.06549771,
+    "Bank A Airflow": 952.67108265,
+    "Bank B Airflow": 959.89211692,
+    "value": 0.9863746999999999
+  },
+  {
+    "SAG1": 249.28589746,
+    "SAG2": 148.20358896,
+    "SAG3": 235.21792974,
+    "Pb Rghr Tails Flow": 3353.2914007,
+    "Zn Rougher 2 Con Flow": 898.92898659,
+    "Bank A Airflow": 952.47273262,
+    "Bank B Airflow": 960.96345281,
+    "value": 1.170772
+  },
+  {
+    "SAG1": 241.03612266,
+    "SAG2": 142.34028277,
+    "SAG3": 231.21844275,
+    "Pb Rghr Tails Flow": 3352.5819142,
+    "Zn Rougher 2 Con Flow": 857.72072885,
+    "Bank A Airflow": 965.47928319,
+    "Bank B Airflow": 973.58487387,
+    "value": 0.9031215
+  },
+  {
+    "SAG1": 247.79898943,
+    "SAG2": 161.86813354,
+    "SAG3": 239.44356804,
+    "Pb Rghr Tails Flow": 3504.8027309,
+    "Zn Rougher 2 Con Flow": 904.20631286,
+    "Bank A Airflow": 951.67976623,
+    "Bank B Airflow": 960.45954155,
+    "value": 2.20295
+  },
+  {
+    "SAG1": 260.16878915,
+    "SAG2": 159.34201984,
+    "SAG3": 233.46511148,
+    "Pb Rghr Tails Flow": 3465.3201671,
+    "Zn Rougher 2 Con Flow": 921.71025294,
+    "Bank A Airflow": 952.21043763,
+    "Bank B Airflow": 961.75116283,
+    "value": 1.597902
+  },
+  {
+    "SAG1": 262.64950982,
+    "SAG2": 164.36262775,
+    "SAG3": 241.14791669,
+    "Pb Rghr Tails Flow": 3428.9630679,
+    "Zn Rougher 2 Con Flow": 952.41375857,
+    "Bank A Airflow": 953.36137241,
+    "Bank B Airflow": 962.21779299,
+    "value": 0.6044997
+  },
+  {
+    "SAG1": 261.7589685,
+    "SAG2": 169.18173329,
+    "SAG3": 245.21500289,
+    "Pb Rghr Tails Flow": 3408.3023767,
+    "Zn Rougher 2 Con Flow": 964.36735536,
+    "Bank A Airflow": 962.41895824,
+    "Bank B Airflow": 971.72997032,
+    "value": 2.0602840000000002
+  },
+  {
+    "SAG1": 252.31990885,
+    "SAG2": 165.4884206,
+    "SAG3": 242.37525784,
+    "Pb Rghr Tails Flow": 3421.1333675,
+    "Zn Rougher 2 Con Flow": 944.29244671,
+    "Bank A Airflow": 956.04504828,
+    "Bank B Airflow": 962.04258947,
+    "value": 0.8672835999999999
+  },
+  {
+    "SAG1": 259.3916171,
+    "SAG2": 161.53137554,
+    "SAG3": 241.24190624,
+    "Pb Rghr Tails Flow": 3433.3637033,
+    "Zn Rougher 2 Con Flow": 950.04917257,
+    "Bank A Airflow": 962.99481062,
+    "Bank B Airflow": 969.61478942,
+    "value": 1.4828540000000001
+  },
+  {
+    "SAG1": 262.28793035,
+    "SAG2": 168.84382326,
+    "SAG3": 240.65898987,
+    "Pb Rghr Tails Flow": 3456.4968773,
+    "Zn Rougher 2 Con Flow": 933.29473027,
+    "Bank A Airflow": 966.16806469,
+    "Bank B Airflow": 975.73123134,
+    "value": 0.8490349
+  },
+  {
+    "SAG1": 258.35165405,
+    "SAG2": 168.55173447,
+    "SAG3": 233.76282914,
+    "Pb Rghr Tails Flow": 3516.4402372,
+    "Zn Rougher 2 Con Flow": 923.01909035,
+    "Bank A Airflow": 956.61440018,
+    "Bank B Airflow": 960.65997036,
+    "value": 1.410803
+  },
+  {
+    "SAG1": 253.93103872,
+    "SAG2": 160.74127946,
+    "SAG3": 235.36136127,
+    "Pb Rghr Tails Flow": 3477.739735,
+    "Zn Rougher 2 Con Flow": 879.71440039,
+    "Bank A Airflow": 952.4889276,
+    "Bank B Airflow": 962.21056635,
+    "value": 1.091844
+  },
+  {
+    "SAG1": 260.40309318,
+    "SAG2": 161.2160045,
+    "SAG3": 231.14908306,
+    "Pb Rghr Tails Flow": 3493.5057985,
+    "Zn Rougher 2 Con Flow": 836.6519278,
+    "Bank A Airflow": 967.30949484,
+    "Bank B Airflow": 978.874244,
+    "value": 0.6850931
+  },
+  {
+    "SAG1": 257.89898206,
+    "SAG2": 182.9311767,
+    "SAG3": 232.82328041,
+    "Pb Rghr Tails Flow": 3490.5503358,
+    "Zn Rougher 2 Con Flow": 832.08544162,
+    "Bank A Airflow": 950.42158106,
+    "Bank B Airflow": 964.90146573,
+    "value": 1.198601
+  },
+  {
+    "SAG1": 261.95419831,
+    "SAG2": 178.19695279,
+    "SAG3": 222.8997788,
+    "Pb Rghr Tails Flow": 3523.6929116,
+    "Zn Rougher 2 Con Flow": 823.01434368,
+    "Bank A Airflow": 954.66487332,
+    "Bank B Airflow": 967.039163,
+    "value": 0.6593991
+  },
+  {
+    "SAG1": 258.14131528,
+    "SAG2": 175.93058661,
+    "SAG3": 217.20297016,
+    "Pb Rghr Tails Flow": 3510.5920316,
+    "Zn Rougher 2 Con Flow": 857.54989902,
+    "Bank A Airflow": 969.70866964,
+    "Bank B Airflow": 978.37459688,
+    "value": 0.8394099
+  },
+  {
+    "SAG1": 260.02002374,
+    "SAG2": 181.08222681,
+    "SAG3": 211.56811856,
+    "Pb Rghr Tails Flow": 3521.3083346,
+    "Zn Rougher 2 Con Flow": 910.43221031,
+    "Bank A Airflow": 964.653199,
+    "Bank B Airflow": 972.92919846,
+    "value": 1.971393
+  },
+  {
+    "SAG1": 223.56709359,
+    "SAG2": 201.59606717,
+    "SAG3": 210.6750915,
+    "Pb Rghr Tails Flow": 3527.7011609,
+    "Zn Rougher 2 Con Flow": 937.06196535,
+    "Bank A Airflow": 967.81441419,
+    "Bank B Airflow": 975.17756372,
+    "value": 0.7531539
+  },
+  {
+    "SAG1": 226.09889185,
+    "SAG2": 195.41427714,
+    "SAG3": 217.17512849,
+    "Pb Rghr Tails Flow": 3525.1527531,
+    "Zn Rougher 2 Con Flow": 936.4960613,
+    "Bank A Airflow": 963.79090462,
+    "Bank B Airflow": 973.60076787,
+    "value": 0.6391161999999999
+  },
+  {
+    "SAG1": 225.49450684,
+    "SAG2": 201.2250638,
+    "SAG3": 210.46996513,
+    "Pb Rghr Tails Flow": 3509.3000009,
+    "Zn Rougher 2 Con Flow": 920.20023791,
+    "Bank A Airflow": 966.64280525,
+    "Bank B Airflow": 975.21839685,
+    "value": 0.9549211
+  },
+  {
+    "SAG1": 210.26989607,
+    "SAG2": 197.78808614,
+    "SAG3": 216.93816664,
+    "Pb Rghr Tails Flow": 3498.1912865,
+    "Zn Rougher 2 Con Flow": 927.82151132,
+    "Bank A Airflow": 966.44689811,
+    "Bank B Airflow": 974.99337446,
+    "value": 0.6640997
+  },
+  {
+    "SAG1": 232.67483147,
+    "SAG2": 198.02310435,
+    "SAG3": 211.44315764,
+    "Pb Rghr Tails Flow": 3523.4579033,
+    "Zn Rougher 2 Con Flow": 896.92789311,
+    "Bank A Airflow": 964.04367318,
+    "Bank B Airflow": 973.71473572,
+    "value": 1.02471
+  },
+  {
+    "SAG1": 219.0335917,
+    "SAG2": 199.46458161,
+    "SAG3": 219.18700877,
+    "Pb Rghr Tails Flow": 3497.5925657,
+    "Zn Rougher 2 Con Flow": 870.52375887,
+    "Bank A Airflow": 964.56359292,
+    "Bank B Airflow": 974.63192083,
+    "value": 0.9507198
+  },
+  {
+    "SAG1": 218.27577068,
+    "SAG2": 197.57805401,
+    "SAG3": 219.80288146,
+    "Pb Rghr Tails Flow": 3494.8606478,
+    "Zn Rougher 2 Con Flow": 892.49682289,
+    "Bank A Airflow": 965.46003995,
+    "Bank B Airflow": 972.65810861,
+    "value": 0.8261649999999999
+  },
+  {
+    "SAG1": 219.9764257,
+    "SAG2": 195.4854507,
+    "SAG3": 224.60420783,
+    "Pb Rghr Tails Flow": 3536.2186635,
+    "Zn Rougher 2 Con Flow": 906.08950272,
+    "Bank A Airflow": 975.62885736,
+    "Bank B Airflow": 983.5723403,
+    "value": 0.7804528000000001
+  },
+  {
+    "SAG1": 219.40481754,
+    "SAG2": 198.65380055,
+    "SAG3": 233.457447,
+    "Pb Rghr Tails Flow": 3525.7683375,
+    "Zn Rougher 2 Con Flow": 911.17968712,
+    "Bank A Airflow": 969.88616979,
+    "Bank B Airflow": 979.32633347,
+    "value": 0.6777839
+  },
+  {
+    "SAG1": 224.44065547,
+    "SAG2": 186.96720145,
+    "SAG3": 229.3040897,
+    "Pb Rghr Tails Flow": 3487.2199659,
+    "Zn Rougher 2 Con Flow": 930.98798529,
+    "Bank A Airflow": 961.80567899,
+    "Bank B Airflow": 967.08582546,
+    "value": 0.8538819999999999
+  },
+  {
+    "SAG1": 225.97954244,
+    "SAG2": 186.22405594,
+    "SAG3": 236.49412598,
+    "Pb Rghr Tails Flow": 3489.6839782,
+    "Zn Rougher 2 Con Flow": 925.727136,
+    "Bank A Airflow": 959.89173027,
+    "Bank B Airflow": 968.20514389,
+    "value": 0.7647321
+  },
+  {
+    "SAG1": 224.94504773,
+    "SAG2": 189.46626901,
+    "SAG3": 233.89491568,
+    "Pb Rghr Tails Flow": 3491.0912604,
+    "Zn Rougher 2 Con Flow": 928.22687132,
+    "Bank A Airflow": 962.58437305,
+    "Bank B Airflow": 969.16899809,
+    "value": 1.412115
+  },
+  {
+    "SAG1": 227.99408633,
+    "SAG2": 172.85983457,
+    "SAG3": 234.83921898,
+    "Pb Rghr Tails Flow": 3466.8428576,
+    "Zn Rougher 2 Con Flow": 924.71916153,
+    "Bank A Airflow": 962.22336273,
+    "Bank B Airflow": 970.9507827,
+    "value": 1.1323590000000001
+  },
+  {
+    "SAG1": 229.34066772,
+    "SAG2": 157.48941885,
+    "SAG3": 241.35362721,
+    "Pb Rghr Tails Flow": 3489.4381161,
+    "Zn Rougher 2 Con Flow": 944.47914066,
+    "Bank A Airflow": 954.27117815,
+    "Bank B Airflow": 966.34285261,
+    "value": 0.7180714
+  },
+  {
+    "SAG1": 233.1648891,
+    "SAG2": 154.01312966,
+    "SAG3": 240.15563205,
+    "Pb Rghr Tails Flow": 3478.6613124,
+    "Zn Rougher 2 Con Flow": 936.56961809,
+    "Bank A Airflow": 957.08887626,
+    "Bank B Airflow": 964.98165961,
+    "value": 1.8393990000000002
+  }
+]

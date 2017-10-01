@@ -6,6 +6,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<!-- <link rel="stylesheet" href="./css/style.css"> -->
 	<style type="text/css">
+		body {
+		    background-color: #ffffff;
+		}
 		.bar{
 			fill: lightskyblue;
 		}
@@ -19,9 +22,12 @@
 			fill: #666666;
 			font-size: 14px;
 		}
+		.mycontent-left {
+		  border-right: 3px solid  #333;
+		}
 	</style>
 </head>
-<body>
+<body bgcolor="#ffffff">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/spin.js/2.3.2/spin.min.js"></script>
@@ -41,22 +47,34 @@
 		    </nav>
 		<!--Nav bar ENDS -->
 
-		<!-- About -->
-		<div class="container">
-			<div class="row">
-				<!-- <img class="image" src="Res/header.jpg" alt="HeaderImg"> -->
-				<div id="recovery" class="col-md-6 text-center">
-					Recovery/Grade vs Time Graph
+		<div>
+		   	<div class="col-xs-8">
+		       <!-- Your first column here -->
+		       <!-- Graph -->
+				<div class="mycontent-left">
+					<div class="row">
+						<!-- <img class="image" src="Res/header.jpg" alt="HeaderImg"> -->
+						<div id="recovery" class="col-md-6 text-center">
+							Recovery/Grade vs Time Graph
+						</div>
+						<div id="operator" class="col-md-6 text-center">
+						</div>
+					</div>
 				</div>
-				<div id="operator" class="col-md-6 text-center">
+		   	</div>
+
+		   <div class="col-xs-4">
+		       <!-- Your second column here -->
+		       	<!-- Live graph -->
+				<div class="container">
+					<h1>Frothy Froth Froth</h1>
 				</div>
-			</div>
+				<!-- Live graph -->
+		   </div>
 		</div>
 
-		<div class="container">
-			<center><h1>Frothy Froth Froth</h1></center>
-		</div>
-		<!-- END about -->
+		
+	
 
 
 	</div>
