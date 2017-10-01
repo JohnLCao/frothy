@@ -1,0 +1,718 @@
+
+
+```python
+#import some libraries
+import matplotlib.pyplot as plt, pandas as pd, numpy as np, matplotlib as mpl
+from __future__ import print_function
+```
+
+
+```python
+#Cleaned data from SQL Velocity 
+df = pd.read_csv('Cleaned_data.csv')
+
+index = df.loc[df['time'].str.contains("2017-01-20")]
+
+
+df['time'] = pd.to_datetime(df['time'], format='%Y-%m-%d %H:%M:%S.%f')
+
+df.sort_values(by='time')
+
+##index = df.loc[df['tag_id'] == 2]
+df = df[df['qualityName_id'] != 3]
+df = df[df['qualityName_id'] != 4]
+df = df[df['qualityName_id'] != 2]
+
+##print (df)
+tagTable = []
+for i in range(0,2005):
+    tagTable.append(df.loc[df['tag_id'] == i])
+
+df =tagTable[985]
+
+##df = tagTable[985]
+
+df = df.drop(['name','tag_id'],axis=1)
+```
+
+
+```python
+
+
+
+```
+
+
+```python
+#Assay data filtering with recovery calculation
+
+df1 = pd.read_csv("FeedData/AssaysCSV.csv", low_memory = False)
+df1 = df1.loc[(df1['Timestamp'] == '2017-01-20')]
+
+df1['time '] = df1['time '].map(str) + " " +df1['Timestamp']
+df1['time '] = pd.to_datetime(df1['time '], format='%H:%M:%S %Y-%m-%d' )
+
+df1 = df1.set_index("time ")
+df  = df.set_index("time", drop=False)
+final = df1.reindex(df.index, method='nearest')
+
+finalop = final.join(df)
+result = finalop['qualityName_id']
+finalop = finalop.drop(['Timestamp', 'time', 'qualityName_id'],axis=1)
+
+finalop = finalop.join(result)
+allAssay = finalop
+allAssay.drop(['qualityName_id'],axis=1)
+
+finalop = finalop[['ZRF Zn', 'ZRT Comb Pb', 'ZRCC Zn', 'value', 'qualityName_id']]
+
+feed = finalop['ZRF Zn']
+tail = finalop['ZRT Comb Pb']
+concentration = finalop['ZRCC Zn']
+
+Recovery =[]
+for index, row in finalop.iterrows():
+    concentration = float(row['ZRCC Zn'])
+    tail = float(row['ZRT Comb Pb'])
+    feed = float(row['ZRF Zn'])
+    
+    rec = (((concentration/feed) *(feed - tail))/ tail*(concentration - tail))
+    Recovery.append(rec)
+    
+    ##print ("Data is :" + str(tail) + " "+ str(feed)+ " " + str(concentration))
+finalop['Recocvery']= Recovery
+##finalop['Recocvery'] = finalop['Recocvery'].replace([True,False], [1,0])
+
+finalop.drop(['qualityName_id'],axis=1)
+finalop = finalop[['ZRF Zn','ZRT Comb Pb','ZRCC Zn','value','Recocvery']]
+##finalop
+
+finalop.to_csv('AssayResult.csv',index=False)
+
+```
+
+    C:\Users\Yagnik\Anaconda3\lib\site-packages\ipykernel_launcher.py:37: SettingWithCopyWarning: 
+    A value is trying to be set on a copy of a slice from a DataFrame.
+    Try using .loc[row_indexer,col_indexer] = value instead
+    
+    See the caveats in the documentation: http://pandas.pydata.org/pandas-docs/stable/indexing.html#indexing-view-versus-copy
+    
+
+
+```python
+# Flows data filtering
+
+from sklearn import preprocessing
+flowData = pd.read_csv("FeedData/Flows.csv", low_memory = False)
+flowData = flowData.loc[(flowData['Timestamp'] == '2017-01-20')]
+
+flowData['time'] = flowData['time'].map(str) + " " +flowData['Timestamp']
+flowData['time'] = pd.to_datetime(flowData['time'], format='%H:%M:%S %Y-%m-%d' )
+
+
+df1
+
+flowData = flowData.set_index("time")
+df  = df.set_index("time", drop=False)
+final = flowData.reindex(df.index, method='bfill')
+
+finalop = final.join(df)
+finalop = finalop.drop(['time','qualityName_id', 'Timestamp'],axis=1)
+finalop
+finalop.to_csv('FlowResult.csv',index=False)
+
+```
+
+
+```python
+## Pupmps data Filtering 
+
+from sklearn import preprocessing
+pumpsData = pd.read_csv("FeedData/Pumps.csv", low_memory = False)
+pumpsData = pumpsData.loc[(pumpsData['Timestamp'] == '2017-01-20')]
+
+pumpsData['time'] = pumpsData['time'].map(str) + " " +pumpsData['Timestamp']
+pumpsData['time'] = pd.to_datetime(pumpsData['time'], format='%H:%M:%S %Y-%m-%d' )
+
+pumpsData = pumpsData.set_index("time")
+df  = df.set_index("time", drop=False)
+final = pumpsData.reindex(df.index, method='bfill')
+
+finalop = final.join(df)
+finalop = finalop.drop(['time','qualityName_id', 'Timestamp'],axis=1)
+
+finalop = finalop[['Z1RC 01 Output', 'Z1RC 02 Output', 'Z2RC 01 Output','Z2RC 02 Output', 'value' ]]
+##finalop.to_csv('PumpResult.csv',index=False)
+finalop
+```
+
+
+
+
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Z1RC 01 Output</th>
+      <th>Z1RC 02 Output</th>
+      <th>Z2RC 01 Output</th>
+      <th>Z2RC 02 Output</th>
+      <th>value</th>
+    </tr>
+    <tr>
+      <th>time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2017-01-20 00:22:30.210</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>91</td>
+      <td>3.575363</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:24:31.893</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>91</td>
+      <td>1.069023</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:25:32.737</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>91</td>
+      <td>2.051966</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:28:55.547</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>92.628922526</td>
+      <td>1.913640</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:33:19.200</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>1.005923</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:36:41.997</th>
+      <td>89.368570964</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>0.741974</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:38:23.403</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>1.970175</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:40:25.107</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>0.732877</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:43:07.370</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>0.871140</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:45:49.620</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>0.563138</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 00:53:56.370</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>2.467841</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 01:02:03.080</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>93</td>
+      <td>0.780358</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 01:31:07.193</th>
+      <td>92</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.705425</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 01:35:30.853</th>
+      <td>93.980265299</td>
+      <td>86</td>
+      <td>86</td>
+      <td>95</td>
+      <td>0.637819</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:03:54.437</th>
+      <td>92</td>
+      <td>86</td>
+      <td>86</td>
+      <td>89</td>
+      <td>1.160717</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:21:49.280</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>85</td>
+      <td>0.729695</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:22:50.123</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>85</td>
+      <td>0.802667</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:28:55.197</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.579500</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:42:26.407</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>1.000237</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:44:48.360</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.638329</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:45:28.917</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>1.254742</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:47:30.590</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.691507</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 02:48:11.147</th>
+      <td>90</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>1.181352</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:06:06.017</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.539750</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:11:50.767</th>
+      <td>86</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.577654</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:15:13.570</th>
+      <td>86</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>1.250422</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:17:35.527</th>
+      <td>86</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>2.352719</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:19:37.230</th>
+      <td>86</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>0.851932</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:24:21.150</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>85</td>
+      <td>1.159833</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 03:25:21.987</th>
+      <td>88</td>
+      <td>86</td>
+      <td>86</td>
+      <td>85</td>
+      <td>1.022613</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 15:51:40.577</th>
+      <td>79</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82</td>
+      <td>0.500343</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 15:55:03.367</th>
+      <td>79</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82</td>
+      <td>0.542041</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 15:57:25.320</th>
+      <td>79</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82</td>
+      <td>1.339368</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:03:30.347</th>
+      <td>79</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82</td>
+      <td>0.818249</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:06:12.577</th>
+      <td>79</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82</td>
+      <td>1.317088</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:15:20.107</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82</td>
+      <td>2.650183</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:20:04.027</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>81.839742025</td>
+      <td>1.138700</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:22:46.257</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>80</td>
+      <td>0.670626</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:26:29.330</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>80</td>
+      <td>2.517618</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:29:11.560</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>80</td>
+      <td>3.423516</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:31:33.510</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>80</td>
+      <td>2.619593</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:33:55.467</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>78</td>
+      <td>3.300080</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:36:37.697</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>79.501400757</td>
+      <td>2.146574</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:45:04.687</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>78</td>
+      <td>1.187014</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:46:46.080</th>
+      <td>77</td>
+      <td>86</td>
+      <td>86</td>
+      <td>78</td>
+      <td>1.036943</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 16:51:50.267</th>
+      <td>76.165221151</td>
+      <td>86</td>
+      <td>86</td>
+      <td>77.833724976</td>
+      <td>1.003335</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 17:28:00.517</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>83</td>
+      <td>3.194602</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 17:35:26.700</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>83</td>
+      <td>0.570348</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 17:51:40.203</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>3.155108</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 17:59:46.980</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>87</td>
+      <td>1.723034</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 18:06:12.317</th>
+      <td>75</td>
+      <td>86</td>
+      <td>86</td>
+      <td>85</td>
+      <td>1.405262</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 18:37:38.467</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>81</td>
+      <td>0.559498</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 18:41:41.837</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>81</td>
+      <td>2.046295</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 19:13:08.000</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>75</td>
+      <td>2.952648</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 19:24:37.420</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>81</td>
+      <td>1.701452</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 19:29:21.203</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>82.451944987</td>
+      <td>1.300300</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 19:35:05.933</th>
+      <td>73</td>
+      <td>86</td>
+      <td>86</td>
+      <td>75</td>
+      <td>1.306608</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 20:02:28.577</th>
+      <td>75</td>
+      <td>86</td>
+      <td>86</td>
+      <td>71</td>
+      <td>1.387252</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 20:03:29.413</th>
+      <td>75</td>
+      <td>86</td>
+      <td>86</td>
+      <td>71</td>
+      <td>0.861433</td>
+    </tr>
+    <tr>
+      <th>2017-01-20 20:13:17.517</th>
+      <td>75</td>
+      <td>86</td>
+      <td>86</td>
+      <td>73</td>
+      <td>0.949580</td>
+    </tr>
+  </tbody>
+</table>
+<p>267 rows × 5 columns</p>
+</div>
+
+
+
+
+```python
+## Reagents data Filtering 
+
+from sklearn import preprocessing
+reagentsData = pd.read_csv("FeedData/Reagents.csv", low_memory = False)
+reagentsData = reagentsData.loc[(reagentsData['Timestamp'] == '2017-01-20')]
+
+reagentsData['time'] = reagentsData['time'].map(str) + " " +reagentsData['Timestamp']
+reagentsData['time'] = pd.to_datetime(reagentsData['time'], format='%H:%M:%S %Y-%m-%d' )
+
+reagentsData = reagentsData.set_index("time")
+df  = df.set_index("time", drop=False)
+
+##final = pumpsData.reindex(df.index, method='bfill')
+
+##finalop.to_csv('ReagentsResult.csv',index=False)
+```
+
+
+```python
+from sklearn import linear_model
+
+from sklearn import tree
+
+regr = linear_model.LinearRegression()
+
+
+
+plt.figure(figsize=(25,15))
+
+import matplotlib.pyplot as plt
+plt.plot(finalop['value'])
+plt.axis(['01-20-',xmax])
+plt.show()
+
+
+```
