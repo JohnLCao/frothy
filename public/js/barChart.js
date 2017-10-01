@@ -1,7 +1,12 @@
+var index = 0;
+var new_negs = [];
+var new_poses = [];
+var old_value;
+
 var setup = function(targetID){
   //Set size of svg element and chart
   var margin = {top: 0, right: 0, bottom: 0, left: 0},
-    width = 300 - margin.left - margin.right,
+    width = 600 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom,
     categoryIndent = 4*15 + 5,
     defaultBarWidth = 1000;
@@ -29,8 +34,8 @@ var setup = function(targetID){
   return settings;
 }
 
-var redrawChart = function(targetID, newdata) {
-
+var redrawChart = function(targetID, newdata, callback) {
+  console.log('redrawChart got called')
   //Import settings
   var margin=settings.margin, width=settings.width, height=settings.height, categoryIndent=settings.categoryIndent, 
   svg=settings.svg, x=settings.x, y=settings.y;
@@ -58,7 +63,7 @@ var redrawChart = function(targetID, newdata) {
     .enter()
     .append("g")
     .attr("class", "chartRow")
-    .attr("transform", "translate(150," + height + margin.top + margin.bottom + ")");
+    .attr("transform", "translate(250," + height + margin.top + margin.bottom + ")");
 
   //Add rectangles
   newRow.insert("rect")
@@ -66,7 +71,7 @@ var redrawChart = function(targetID, newdata) {
     .attr("x", function(d){return x(d.value);})
     .attr("opacity",0)
     .attr("height", y.rangeBand())
-    .attr("width", function(d) { return Math.abs(x(d.value));}) 
+    .attr("width", function(d) { return Math.abs(x(d.value));});
 
   //Add value labels
   newRow.append("text")
@@ -93,19 +98,21 @@ var redrawChart = function(targetID, newdata) {
   //////////
   //UPDATE//
   //////////
-  
+
   //Update bar widths
   chartRow.select(".bar").transition()
     .duration(300)
+    .attr("width", function(d) { return Math.abs(d.value);})
+    .attr("opacity",1)
     .attr("x", function(d){
       if (d.value < 0){
+        new_negs.push(Math.abs(d.value));
         return d.value;
       } else {
+        new_poses.push(Math.abs(d.value));
         return 0;
       }
-    })
-    .attr("width", function(d) { return Math.abs(d.value);})
-    .attr("opacity",1);
+    });
 
   //Update data labels
   chartRow.select(".label").transition()
@@ -131,20 +138,24 @@ var redrawChart = function(targetID, newdata) {
   //Fade out and remove exit elements
   chartRow.exit().transition()
     .style("opacity","0")
-    .attr("transform", "translate(150," + (height + margin.top + margin.bottom) + ")")
+    .attr("transform", "translate(250," + (height + margin.top + margin.bottom) + ")")
     .remove();
-
 
   ////////////////
   //REORDER ROWS//
   ////////////////
 
-  var delay = function(d, i) { return 200 + i * 30; };
+  if(index == 0) {
+    var delay = function(d, i) { return 200 + i * 30; };
 
-  chartRow.transition()
-    .delay(delay)
-    .duration(900)
-    .attr("transform", function(d){ return "translate(150," + y(d.key) + ")"; });
+    chartRow.transition()
+      .delay(delay)
+      .duration(900)
+      .attr("transform", function(d){ return "translate(250," + y(d.key) + ")"; });
+    index = 1;
+  }
+
+  callback();
 };
 
 
@@ -154,19 +165,31 @@ var redrawChart = function(targetID, newdata) {
 //Uses a callback because d3.json loading is asynchronous
 var pullData = function(settings,callback){
   d3.json("js/data.json", function (err, data){
+    console.log('pullData got called')
     if (err) return console.warn(err);
 
     var newData = data;
     data.forEach(function(d,i){
-      var newValue = d.value + Math.floor((Math.random()*20) - 10)
-      console.log(d.value);
-      newData[i].value = newValue //<= 0 ? 10 : newValue
+      var sign = Math.random() > .5 ? -1 : 1;
+      var newValue = d.value + Math.floor((Math.random()*100)*sign);
+      newData[i].value = newValue
     })
 
     newData = formatData(newData);
 
-    callback(settings,newData);
+    callback(settings,newData, color_update);
   })
+}
+
+var color_update = function(){
+  new_negs.forEach(function(val){
+    console.log($('[width="' + val + '"]'));
+    $('[width="' + val + '"]').css('fill', 'lightcoral');
+  });
+
+  new_poses.forEach(function(val){
+    $('[width="' + val + '"]').css('fill', '#00ff80');
+  });
 }
 
 //Sort data in descending order and take the top 10 values
@@ -179,14 +202,20 @@ var formatData = function(data){
 
 //I like to call it what it does
 var redraw = function(settings){
+  console.log("redraw got called");
   pullData(settings,redrawChart)
+  console.log('exiting redraw');
 }
 
 //setup (includes first draw)
 var settings = setup('#operator');
-redraw(settings)
+redraw(settings);
+new_negs.forEach(function(val){
+  var e = $('[width="' + val + '"]');
+  console.log(e);
+});
 
 //Repeat every 3 seconds
 setInterval(function(){
-  redraw(settings)
+  redraw(settings);
 }, 2000);
