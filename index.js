@@ -18,9 +18,10 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-
-
-
+app.get('/getData', function(req,res){
+	console.log("Sending the JSON data!");
+	res.status(200).sendJSON('data.JSON');
+});
 
 
 app.get('*', function(req, res) {
