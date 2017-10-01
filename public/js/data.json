@@ -1,8 +1,8 @@
 [
-	{"key":"Air Rate", "value":99},
-	{"key":"Feed Grade", "value":-78},
-	{"key":"Slurry Density", "value":77},
-	{"key":"Frother Rate", "value":-64},
-	{"key":"Activator Rate", "value":35},
-	{"key":"Collector Rate", "value":-33}
+	{"key":"Air Rate", "value":0},
+	{"key":"Feed Grade", "value":0},
+	{"key":"Slurry Density", "value":0},
+	{"key":"Frother Rate", "value":0},
+	{"key":"Activator Rate", "value":0},
+	{"key":"Collector Rate", "value":0}
 ]
