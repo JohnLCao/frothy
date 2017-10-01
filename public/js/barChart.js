@@ -58,12 +58,12 @@ var redrawChart = function(targetID, newdata) {
     .enter()
     .append("g")
     .attr("class", "chartRow")
-    .attr("transform", "translate(0," + height + margin.top + margin.bottom + ")");
+    .attr("transform", "translate(150," + height + margin.top + margin.bottom + ")");
 
   //Add rectangles
   newRow.insert("rect")
     .attr("class","bar")
-    .attr("x", 0)
+    .attr("x", function(d){return x(d.value);})
     .attr("opacity",0)
     .attr("height", y.rangeBand())
     .attr("width", function(d) { return Math.abs(x(d.value));}) 
@@ -97,8 +97,14 @@ var redrawChart = function(targetID, newdata) {
   //Update bar widths
   chartRow.select(".bar").transition()
     .duration(300)
-    .attr("x", 0)
-    .attr("width", function(d) { return x(d.value);})
+    .attr("x", function(d){
+      if (d.value < 0){
+        return d.value;
+      } else {
+        return 0;
+      }
+    })
+    .attr("width", function(d) { return Math.abs(d.value);})
     .attr("opacity",1);
 
   //Update data labels
@@ -125,7 +131,7 @@ var redrawChart = function(targetID, newdata) {
   //Fade out and remove exit elements
   chartRow.exit().transition()
     .style("opacity","0")
-    .attr("transform", "translate(0," + (height + margin.top + margin.bottom) + ")")
+    .attr("transform", "translate(150," + (height + margin.top + margin.bottom) + ")")
     .remove();
 
 
@@ -138,7 +144,7 @@ var redrawChart = function(targetID, newdata) {
   chartRow.transition()
     .delay(delay)
     .duration(900)
-    .attr("transform", function(d){ return "translate(0," + y(d.key) + ")"; });
+    .attr("transform", function(d){ return "translate(150," + y(d.key) + ")"; });
 };
 
 
@@ -152,7 +158,8 @@ var pullData = function(settings,callback){
 
     var newData = data;
     data.forEach(function(d,i){
-      var newValue = d.value + Math.floor((Math.random()*10) - 5)
+      var newValue = d.value + Math.floor((Math.random()*20) - 10)
+      console.log(d.value);
       newData[i].value = newValue //<= 0 ? 10 : newValue
     })
 
@@ -182,4 +189,4 @@ redraw(settings)
 //Repeat every 3 seconds
 setInterval(function(){
   redraw(settings)
-}, 3000);
+}, 2000);
