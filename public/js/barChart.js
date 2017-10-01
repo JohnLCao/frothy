@@ -704,6 +704,16 @@ var pullData = function(settings,callback, graph_num){
     // if (err) return console.warn(err);
     // console.log(data_index);
     var newData = fakeAjax(data_index[graph_num], graph_num);
+    if (graph_num === 0){
+      console.log(newData);
+      let isgood = newData["value"];
+      console.log(isgood);
+      if (isgood){
+        $('.goodBad').css('background-color', 'red');
+      } else {
+        $('.goodBad').css('background-color', 'green');
+      }
+    }
     data_index[graph_num]++;
     if (data_index[graph_num] === 10) {
       data_index[graph_num] = 1;
