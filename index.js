@@ -16,12 +16,24 @@ app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use(express.static(__dirname + '/public'));
 
+var objFlow = require("./JsonData/Flow.json");
+var objAssay = require("./JsonData/Assay.json");
+var objPump = require("./JsonData/Pump.json");
 
-
-app.get('/getData', function(req,res){
+app.get('/getAssayJSON', function(req,res){
 	console.log("Sending the JSON data!");
-	res.status(200).sendJSON('data.JSON');
+	res.send(objAssay);
 });
+
+app.get('/getFlowJSON', function(req,res){
+	console.log("Sending the JSON data!");
+	res.send(objFlow);
+});
+
+app.get('/getPumpJSON', function(req,res){
+	console.log("Sending the JSON data!");
+	res.send(objPump);
+});	
 
 
 app.get('*', function(req, res) {
