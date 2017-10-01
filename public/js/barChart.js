@@ -194,7 +194,7 @@ var fakeAjax = function(iter, graph_num){
             "ZRCC Zn": 26.109272003,
             "ZRCC Fe": 8.2968492508,
             "value": 0.3892795,
-            "qualityName_id": 1
+            "qualityName_id": 0
             };
             break;
       case 1:
@@ -488,7 +488,7 @@ else if (iter===3) {
               "ZRCC Pb": 1.8032693863,
               "ZRCC Zn": 46.109272003,
               "ZRCC Fe": 78.2968492508,
-              "value": 1,
+              "value": 0,
               "qualityName_id": 1
             };
             break;
@@ -606,7 +606,7 @@ else if (iter===3) {
               "ZRCC Pb": 1.8032693863,
               "ZRCC Zn": 46.109272003,
               "ZRCC Fe": 78.2968492508,
-              "value": 1,
+              "value": 0,
               "qualityName_id": 1
             };
             break;
@@ -708,10 +708,10 @@ var pullData = function(settings,callback, graph_num){
       console.log(newData);
       let isgood = newData["value"];
       console.log(isgood);
-      if (isgood){
-        $('.goodBad').css('background-color', 'red');
+      if (isgood!=0){
+        $('.goodBad').css('background-color', 'salmon');
       } else {
-        $('.goodBad').css('background-color', 'green');
+        $('.goodBad').css('background-color', 'springgreen');
       }
     }
     data_index[graph_num]++;
@@ -758,4 +758,4 @@ setInterval(function(){
   redraw(settings0, 0);
   redraw(settings1, 1);
   redraw(settings2, 2);
-}, 1000);
+}, 2500);
