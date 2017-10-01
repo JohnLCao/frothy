@@ -709,7 +709,7 @@ var pullData = function(settings,callback, graph_num){
       let isgood = newData["value"];
       console.log(isgood);
       if (isgood!=0){
-        $('.goodBad').css('background-color', 'salmon');
+        $('.goodBad').css('background-color', 'red');
       } else {
         $('.goodBad').css('background-color', 'springgreen');
       }
