@@ -1,0 +1,138 @@
+{
+	"1": [
+		{
+			"MF Pb": 5.2458934784,
+			"MF Zn": 13.497014999,
+			"MF Fe": 5.4422984123,
+			"PbFC Pb": 55.410709381,
+			"PbFC ZN": 11.606258392,
+			"PbFC Fe": 7.1280002594,
+			"ZRF Pb": 3.0963323116,
+			"ZRF Zn": 17.857028961,
+			"ZRF Fe": 8.1788711548,
+			"ZRT A Pb": 1.9203318357,
+			"ZRT A Zn": 0.9989464879,
+			"ZRT A Fe": 3.1686306,
+			"ZRT B Pb": 99.900001526,
+			"ZRT B Zn": 99.900001526,
+			"ZRT B Fe": 99.900001526,
+			"ZRT Comb Pb": 99.900001526,
+			"ZRT Comb Zn": 99.900001526,
+			"ZRT Comb Fe": 99.900001526,
+			"Z1RC Pb": 3.2828223705,
+			"Z1RC Zn": 38.465496063,
+			"Z1RC Fe": 5.6342253685,
+			"Z2RC Pb": 4.0510892868,
+			"Z2RC Zn": 23.221212387,
+			"Z2RC Fe": 14.158090591,
+			"ZRCC Pb": 2.8032693863,
+			"ZRCC Zn": 26.109272003,
+			"ZRCC Fe": 8.2968492508,
+			"value": 0.3892795,
+			"qualityName_id": 1
+		},
+		{
+			"Timestamp": "01-02-17",
+			"RGHR1": 59.034978484,
+			"RGHR2": 68.083030701
+		},
+		{
+			"Timestamp": "01-01-17",
+			"SAG1": 178.51496778,
+			"SAG2": 155.15563684,
+			"SAG3": 118.50767439,
+			"Pb Rghr Tails Flow": 3758.995226,
+			"Zn Rougher 2 Con Flow": 983.59431435,
+			"Bank A Airflow": 1117.0152574,
+			"Bank B Airflow": 1049.8928814
+		},
+		{
+			"Timestamp": "01-01-17",
+			"Z1RC 01 Output": 80,
+			"Z1RC 01 Run": "Running",
+			"Z1RC 02 Output": 86,
+			"Z1RC 02 Run": "Stopped",
+			"Z2RC 01 Output": 86,
+			"Z2RC 01 Run": "Stopped",
+			"Z2RC 02 Output": 82,
+			"Z2RC 02 Run": "Running"
+		},
+		{
+			"Timestamp": "01-02-17",
+			"Zn RGHR MIBC": 28,
+			"Continuous CuSO4": 56.555638888,
+			"Continuous SIBX": 8309.2872958,
+			"Staged SIBX Time A": 3,
+			"Staged SIBX Time B": 3.2999999523,
+			"Flot Feed MIBC": 32
+		}
+	],
+	"2": [
+		{
+			"MF Pb": 5.2458934784,
+			"MF Zn": 13.497014999,
+			"MF Fe": 5.4422984123,
+			"PbFCPb": 55.410709381,
+			"PbFC ZN": 11.606258392,
+			"PbFC Fe": 7.1280002594,
+			"ZRF Pb": 3.0963323116,
+			"ZRF Zn": 17.857028961,
+			"ZRF Fe": 8.1788711548,
+			"ZRT A Pb": 1.9203318357,
+			"ZRT A Zn": 0.9989464879,
+			"ZRT A Fe": 3.1686306,
+			"ZRT B Pb": 99.900001526,
+			"ZRT B Zn": 99.900001526,
+			"ZRT B Fe": 99.900001526,
+			"ZRT Comb Pb": 99.900001526,
+			"ZRT Comb Zn": 99.900001526,
+			"ZRT Comb Fe": 99.900001526,
+			"Z1RC Pb": 3.2828223705,
+			"Z1RC Zn": 38.465496063,
+			"Z1RC Fe": 5.6342253685,
+			"Z2RC Pb": 4.0510892868,
+			"Z2RC Zn": 23.221212387,
+			"Z2RC Fe": 14.158090591,
+			"ZRCC Pb": 2.8032693863,
+			"ZRCC Zn": 26.109272003,
+			"ZRCC Fe": 8.2968492508,
+			"value": 0.3892795,
+			"qualityName_id": 1
+		},
+		{
+			"Timestamp": "01-02-17",
+			"RGHR1": 59.034978484,
+			"RGHR2": 68.083030701
+		},
+		{
+			"Timestamp": "01-01-17",
+			"SAG1": 178.51496778,
+			"SAG2": 155.15563684,
+			"SAG3": 118.50767439,
+			"Pb Rghr Tails Flow": 3758.995226,
+			"Zn Rougher 2 Con Flow": 983.59431435,
+			"Bank A Airflow": 1117.0152574,
+			"Bank B Airflow": 1049.8928814
+		},
+		{
+			"Timestamp": "01-01-17",
+			"Z1RC 01 Output": 80,
+			"Z1RC 01 Run": "Running",
+			"Z1RC 02 Output": 86,
+			"Z1RC 02 Run": "Stopped",
+			"Z2RC 01 Output": 86,
+			"Z2RC 01 Run": "Stopped",
+			"Z2RC 02 Output": 82,
+			"Z2RC 02 Run": "Running"
+		},
+		{
+			"Timestamp": "01-02-17",
+			"Zn RGHR MIBC": 28,
+			"Continuous CuSO4": 56.555638888,
+			"Continuous SIBX": 8309.2872958,
+			"Staged SIBX Time A": 3,
+			"Staged SIBX Time B": 3.2999999523,
+			"Flot Feed MIBC": 32
+		}
+	]
+}
