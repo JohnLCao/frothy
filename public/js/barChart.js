@@ -1,128 +1,185 @@
-function columnChart() {
-  var margin = {top: 30, right: 10, bottom: 50, left: 50},
-      width = 420,
-      height = 420,
-      xRoundBands = 0.2,
-      xValue = function(d) { return d[0]; },
-      yValue = function(d) { return d[1]; },
-      xScale = d3.scale.ordinal(),
-      yScale = d3.scale.linear(),
-      yAxis = d3.svg.axis().scale(yScale).orient("left"),
-      xAxis = d3.svg.axis().scale(xScale);
-      
+var setup = function(targetID){
+  //Set size of svg element and chart
+  var margin = {top: 0, right: 0, bottom: 0, left: 0},
+    width = 300 - margin.left - margin.right,
+    height = 400 - margin.top - margin.bottom,
+    categoryIndent = 4*15 + 5,
+    defaultBarWidth = 1000;
 
-  function chart(selection) {
-    selection.each(function(data) {
+  //Set up scales
+  var x = d3.scale.linear()
+    .domain([0,defaultBarWidth])
+    .range([0,width]);
+  var y = d3.scale.ordinal()
+    .rangeRoundBands([0, height], 0.1, 0);
 
-      // Convert data to standard representation greedily;
-      // this is needed for nondeterministic accessors.
-      data = data.map(function(d, i) {
-        return [xValue.call(data, d, i), yValue.call(data, d, i)];
-      });
-    
-      // Update the x-scale.
-      xScale
-          .domain(data.map(function(d) { return d[0];} ))
-          .rangeRoundBands([0, width - margin.left - margin.right], xRoundBands);
-         
-
-      // Update the y-scale.
-      yScale
-          .domain(d3.extent(data.map(function(d) { return d[1];} )))
-          .range([height - margin.top - margin.bottom, 0])
-          .nice();
-          
-
-      // Select the svg element, if it exists.
-      var svg = d3.select(this).selectAll("svg").data([data]);
-
-      // Otherwise, create the skeletal chart.
-      var gEnter = svg.enter().append("svg").append("g");
-      gEnter.append("g").attr("class", "bars");
-      gEnter.append("g").attr("class", "y axis");
-      gEnter.append("g").attr("class", "x axis");
-      gEnter.append("g").attr("class", "x axis zero");
-
-      // Update the outer dimensions.
-      svg .attr("width", width)
-          .attr("height", height);
-
-      // Update the inner dimensions.
-      var g = svg.select("g")
-          .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-     // Update the bars.
-      var bar = svg.select(".bars").selectAll(".bar").data(data);
-      bar.enter().append("rect");
-      bar.exit().remove();
-      bar .attr("class", function(d, i) { return d[1] < 0 ? "bar negative" : "bar positive"; })
-          .attr("x", function(d) { return X(d); })
-          .attr("y", function(d, i) { return d[1] < 0 ? Y0() : Y(d); })
-          .attr("width", xScale.rangeBand())
-          .attr("height", function(d, i) { return Math.abs( Y(d) - Y0() ); });
-
-    // x axis at the bottom of the chart
-     g.select(".x.axis")
-        .attr("transform", "translate(0," + (height - margin.top - margin.bottom) + ")")
-        .call(xAxis.orient("bottom"));
-    
-    // zero line
-     g.select(".x.axis.zero")
-        .attr("transform", "translate(0," + Y0() + ")")
-        .call(xAxis.tickFormat("").tickSize(0));
-    
-    
-      // Update the y-axis.
-      g.select(".y.axis")
-        .call(yAxis);
-          
-    });
+  //Create SVG element
+  d3.select(targetID).selectAll("svg").remove()
+  var svg = d3.select(targetID).append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+  
+  //Package and export settings
+  var settings = {
+    margin:margin, width:width, height:height, categoryIndent:categoryIndent,
+    svg:svg, x:x, y:y
   }
-
-
-// The x-accessor for the path generator; xScale ∘ xValue.
-  function X(d) {
-    return xScale(d[0]);
-  }
-
-  function Y0() {
-    return yScale(0);
-  }
-
-  // The x-accessor for the path generator; yScale ∘ yValue.
-  function Y(d) {
-    return yScale(d[1]);
-  }
-
-  chart.margin = function(_) {
-    if (!arguments.length) return margin;
-    margin = _;
-    return chart;
-  };
-
-  chart.width = function(_) {
-    if (!arguments.length) return width;
-    width = _;
-    return chart;
-  };
-
-  chart.height = function(_) {
-    if (!arguments.length) return height;
-    height = _;
-    return chart;
-  };
-
-  chart.x = function(_) {
-    if (!arguments.length) return xValue;
-    xValue = _;
-    return chart;
-  };
-
-  chart.y = function(_) {
-    if (!arguments.length) return yValue;
-    yValue = _;
-    return chart;
-  };
-
-  return chart;
+  return settings;
 }
+
+var redrawChart = function(targetID, newdata) {
+
+  //Import settings
+  var margin=settings.margin, width=settings.width, height=settings.height, categoryIndent=settings.categoryIndent, 
+  svg=settings.svg, x=settings.x, y=settings.y;
+
+  //Reset domains
+  y.domain(newdata.sort(function(a,b){
+    return b.value - a.value;
+  })
+    .map(function(d) { return d.key; }));
+  var barmax = d3.max(newdata, function(e) {
+    return e.value;
+  });
+  x.domain([-barmax,barmax]);
+
+  /////////
+  //ENTER//
+  /////////
+
+  //Bind new data to chart rows 
+
+  //Create chart row and move to below the bottom of the chart
+  var chartRow = svg.selectAll("g.chartRow")
+    .data(newdata, function(d){ return d.key});
+  var newRow = chartRow
+    .enter()
+    .append("g")
+    .attr("class", "chartRow")
+    .attr("transform", "translate(0," + height + margin.top + margin.bottom + ")");
+
+  //Add rectangles
+  newRow.insert("rect")
+    .attr("class","bar")
+    .attr("x", 0)
+    .attr("opacity",0)
+    .attr("height", y.rangeBand())
+    .attr("width", function(d) { return Math.abs(x(d.value));}) 
+
+  //Add value labels
+  newRow.append("text")
+    .attr("class","label")
+    .attr("y", y.rangeBand()/2)
+    .attr("x",0)
+    .attr("opacity",0)
+    .attr("dy",".35em")
+    .attr("dx","0.5em")
+    .text(function(d){return d.value;}); 
+  
+  //Add Headlines
+  newRow.append("text")
+    .attr("class","category")
+    .attr("text-overflow","ellipsis")
+    .attr("y", y.rangeBand()/2)
+    .attr("x",categoryIndent)
+    .attr("opacity",0)
+    .attr("dy",".35em")
+    .attr("dx","0.5em")
+    .text(function(d){return d.key});
+
+
+  //////////
+  //UPDATE//
+  //////////
+  
+  //Update bar widths
+  chartRow.select(".bar").transition()
+    .duration(300)
+    .attr("x", 0)
+    .attr("width", function(d) { return x(d.value);})
+    .attr("opacity",1);
+
+  //Update data labels
+  chartRow.select(".label").transition()
+    .duration(300)
+    .attr("opacity",1)
+    .tween("text", function(d) { 
+    var i = d3.interpolate(+this.textContent.replace(/\,/g,''), +d.value);
+    return function(t) {
+      this.textContent = Math.round(i(t));
+    };
+    });
+
+  //Fade in categories
+  chartRow.select(".category").transition()
+    .duration(300)
+    .attr("opacity",1);
+
+
+  ////////
+  //EXIT//
+  ////////
+
+  //Fade out and remove exit elements
+  chartRow.exit().transition()
+    .style("opacity","0")
+    .attr("transform", "translate(0," + (height + margin.top + margin.bottom) + ")")
+    .remove();
+
+
+  ////////////////
+  //REORDER ROWS//
+  ////////////////
+
+  var delay = function(d, i) { return 200 + i * 30; };
+
+  chartRow.transition()
+    .delay(delay)
+    .duration(900)
+    .attr("transform", function(d){ return "translate(0," + y(d.key) + ")"; });
+};
+
+
+
+//Pulls data
+//Since our data is fake, adds some random changes to simulate a data stream.
+//Uses a callback because d3.json loading is asynchronous
+var pullData = function(settings,callback){
+  d3.json("js/data.json", function (err, data){
+    if (err) return console.warn(err);
+
+    var newData = data;
+    data.forEach(function(d,i){
+      var newValue = d.value + Math.floor((Math.random()*10) - 5)
+      newData[i].value = newValue //<= 0 ? 10 : newValue
+    })
+
+    newData = formatData(newData);
+
+    callback(settings,newData);
+  })
+}
+
+//Sort data in descending order and take the top 10 values
+var formatData = function(data){
+    return data.sort(function (a, b) {
+        return b.value - a.value;
+      })
+    .slice(0, 10);
+}
+
+//I like to call it what it does
+var redraw = function(settings){
+  pullData(settings,redrawChart)
+}
+
+//setup (includes first draw)
+var settings = setup('#operator');
+redraw(settings)
+
+//Repeat every 3 seconds
+setInterval(function(){
+  redraw(settings)
+}, 3000);

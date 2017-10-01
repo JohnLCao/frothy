@@ -1,16 +1,4 @@
 // operator recommendations graph
-var data = [
-    ["Air",0.012], ["Feed Grade",-0.025], ["Density",0.008], ["Frother",0.023], ["Activator",-0.009], ["Collector", 0.005]
-];
-
-
-d3.select("#operator")
-  .datum(data)
-    .call(columnChart()
-      .width(960)
-      .height(500)
-      .x(function(d, i) { return d[0]; })
-      .y(function(d, i) { return d[1]; }));
 // end operator recommendations graph
 
 //----------------------------------------------------------------------
